@@ -13,7 +13,7 @@ public class Restaurante {
 	
 	private String codigoPostal;
 	
-	private List<Receta> carta = new ArrayList();
+	private List<Receta> carta = new ArrayList<Receta>();
 	
 
 	
