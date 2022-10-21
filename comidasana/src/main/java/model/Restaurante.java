@@ -9,23 +9,23 @@ public class Restaurante {
 	
 	private String direccion;
 	
-	private String teleefono;
+	private String telefono;
 	
 	private String codigoPostal;
 	
 	private List<Receta> carta = new ArrayList();
 	
 
-	public Restaurante(String nombre, String direccion, String teleefono, String codigoPostal, List<Receta> carta) {
+	
+
+	public Restaurante(String nombre, String direccion, String telefono, String codigoPostal, List<Receta> carta) {
 		super();
 		this.nombre = nombre;
 		this.direccion = direccion;
-		this.teleefono = teleefono;
+		this.telefono = telefono;
 		this.codigoPostal = codigoPostal;
 		this.carta = carta;
 	}
-	
-	
 
 	public String getNombre() {
 		return nombre;
@@ -44,11 +44,11 @@ public class Restaurante {
 	}
 
 	public String getTeleefono() {
-		return teleefono;
+		return telefono;
 	}
 
 	public void setTeleefono(String teleefono) {
-		this.teleefono = teleefono;
+		this.telefono = teleefono;
 	}
 
 	public String getCodigoPostal() {
