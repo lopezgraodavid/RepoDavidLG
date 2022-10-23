@@ -1,33 +1,37 @@
 package view;
 
+import java.sql.SQLException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import service.RecetaService;
 
 public class MenuPrincipal {
-	
-	static RecetaService service = new RecetaService();
 
-	@SuppressWarnings("static-access")
-	public static void printMenuPrincipal() {
+	public static void printMenuPrincipal() throws SQLException {
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Bienvenido a mi App, elige una opcion"
-				+ "1-Ver recetas"
-				+ "2-Crear receta"
-				+ "3-Buscar restaurant");
-		int option=sc.nextInt();
-		
-		sc.close();
-		
-		switch (option) {
-		case 1: service.verReceta(); break;
-		case 2: break;
-		case 3: break;
+		System.out.println("Bienvenido a mi App, elige una opcion\n"
+				+ "1-Ver recetas\n"
+				+ "2-Crear receta\n"
+				+ "3-Buscar restaurant\n"
+				+ "4-Salir");
+		int option = 0;
+		try {
+		option=sc.nextInt();
+		} catch(InputMismatchException e) {
+			System.out.println("Solo se permiten numeros");
 		}
 		
-		printMenuPrincipal();
+		
+		
+		switch (option) {
+		case 1: RecetaService.verReceta(); printMenuPrincipal();break;
+		case 2: RecetaService.crearReceta(); printMenuPrincipal();break;
+		case 3: printMenuPrincipal();break;
+		case 4: break;
+		}
 	}
 	
 }

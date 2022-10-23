@@ -1,15 +1,46 @@
 package database;
 
-import model.Receta;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 public class RecetaDAO {
+	
+	private static Connection getConnection() throws SQLException {
+		
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/comidasana?serverTimezone=UTC","root", "1234");
+	}
+	
 
-	public Receta encuentraReceta() {
+	public static void encuentraReceta() throws SQLException {
 		
-		System.out.println("Accedo a bbdd y reecupero una receta");
+		Connection con = getConnection();
 		
-		return null;
+		Statement st = con.createStatement();
+		
+		ResultSet rs = st.executeQuery("SELECT nombre FROM RECETAS");
+		
+		while (rs.next()) {
+			System.out.println(rs.getString("nombre"));
+		}
 			
 	}
+	
+	
+	public static void crearReceta(String nombre) throws SQLException {
+		Connection con = getConnection();
+		
+		PreparedStatement pst = con.prepareStatement("INSERT INTO comidasana.recetas (nombre) VALUES (?)");
+		pst.setString(1, nombre);
+		pst.executeUpdate();
+		
+		con.close();
+
+	}
+	
 	
 }
