@@ -22,8 +22,8 @@ public class RestauranteDAO {
 		ResultSet rs = st.executeQuery("SELECT nombre,direccion,codigopostal,telefono FROM RESTAURANTES");
 		
 		while (rs.next()) {
-			System.out.println("Nombre: "+rs.getString("nombre")+", Direccion: "+rs.getString("direccion")+"Telefono: "+rs.getString("telefono"));
-			System.out.println("Direccion: "+rs.getString("direccion")+"Cod.Postal: "+rs.getString("codigopostal")+"\n");
+			System.out.println("Nombre: "+rs.getString("nombre")+" Telefono: "+rs.getString("telefono"));
+			System.out.println("Direccion: "+rs.getString("direccion")+" Cod.Postal: "+rs.getString("codigopostal")+"\n");
 		}
 		
 			

@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import service.RecetaService;
+import service.RestauranteService;
 
 public class MenuPrincipal {
 
@@ -29,7 +30,7 @@ public class MenuPrincipal {
 		switch (option) {
 		case 1: RecetaService.verReceta(); printMenuPrincipal();break;
 		case 2: RecetaService.crearReceta(); printMenuPrincipal();break;
-		case 3: printMenuPrincipal();break;
+		case 3: RestauranteService.verRestaurante();; printMenuPrincipal(); ;break;
 		case 4: break;
 		}
 	}
