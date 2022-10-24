@@ -8,6 +8,10 @@ import service.RecetaService;
 import service.RestauranteService;
 
 public class MenuPrincipal {
+	
+	private static final int  VER_RECETA = 1;
+	private static final int  CREAR_RECETA = 2 ;
+	private static final int  VER_RESTAURANTES = 3 ;
 
 	public static void printMenuPrincipal() throws SQLException {
 		
@@ -28,9 +32,18 @@ public class MenuPrincipal {
 		
 		
 		switch (option) {
-		case 1: RecetaService.verReceta(); printMenuPrincipal();break;
-		case 2: RecetaService.crearReceta(); printMenuPrincipal();break;
-		case 3: RestauranteService.verRestaurante();; printMenuPrincipal(); ;break;
+		case VER_RECETA: 
+			RecetaService.verReceta(); 
+		printMenuPrincipal()
+			;break;
+		case CREAR_RECETA: 
+			RecetaService.crearReceta(); 
+			printMenuPrincipal()
+			;break;
+		case VER_RESTAURANTES: 
+			RestauranteService.verRestaurante(); 
+			printMenuPrincipal(); 
+			;break;
 		case 4: break;
 		}
 	}

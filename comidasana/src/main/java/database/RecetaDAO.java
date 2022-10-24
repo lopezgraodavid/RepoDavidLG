@@ -19,21 +19,21 @@ public class RecetaDAO {
 	public static void encuentraReceta() throws SQLException {
 		
 		Connection con = getConnection();
-		
 		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery("SELECT id,nombre FROM RECETAS");
 		
-		ResultSet rs = st.executeQuery("SELECT nombre FROM RECETAS");
-		
+		System.out.println("Estas son nuestras recetas: ");
 		while (rs.next()) {
-			System.out.println(rs.getString("nombre"));
+			System.out.println(rs.getString("id")+"- "+rs.getString("nombre"));
 		}
+		System.out.println();
 			
 	}
 	
 	
 	public static void crearReceta(String nombre) throws SQLException {
-		Connection con = getConnection();
 		
+		Connection con = getConnection();
 		PreparedStatement pst = con.prepareStatement("INSERT INTO comidasana.recetas (nombre) VALUES (?)");
 		pst.setString(1, nombre);
 		pst.executeUpdate();

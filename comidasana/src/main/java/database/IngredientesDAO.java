@@ -5,6 +5,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Ingrediente;
+import service.IngredienteService;
+import service.RecetaService;
 
 public class IngredientesDAO {
 	
@@ -28,4 +34,17 @@ public class IngredientesDAO {
 		con.close();
 	}
 
+	
+	public static void introducirIngredientesReceta() throws SQLException {
+		
+		System.out.println("Seleccione Receta: (Numero)");
+		RecetaService.verReceta();
+		
+		System.out.println("Seleccione ingrediente: (Numero)");
+		IngredienteService.verIngredientes();
+		
+		
+	}
 }
+
+
