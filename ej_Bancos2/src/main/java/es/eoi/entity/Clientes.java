@@ -22,7 +22,7 @@ public class Clientes {
 	@Column(name = "direccion")
 	private String direccion;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "cliente")
 	private List<Cuentas> cuentas;
 
 	public String getDni() {
