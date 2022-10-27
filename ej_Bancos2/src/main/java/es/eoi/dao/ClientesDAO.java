@@ -50,27 +50,6 @@ public class ClientesDAO {
 	}
 	
 	
-
-	@SuppressWarnings("unchecked")
-	public List<Object[]> readAll() {
-		
-		Query q = manager.createNativeQuery("SELECT * FROM EJ_BANCOS.CLIENTES");
-		List<Object[]> authors = q.getResultList();
-		for (Object[] a : authors) {
-			System.out.println("Cliente: "
-			+ a[0]
-			+ " "
-			+ a[1]
-			+ " "
-			+ a[2]
-			);
-		}
-		
-		return authors;
-	}
-	
-	
-	
 	@SuppressWarnings("unchecked")
 	public List<Clientes> findAll() {
 		

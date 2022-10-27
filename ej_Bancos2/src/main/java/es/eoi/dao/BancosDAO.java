@@ -49,25 +49,6 @@ public class BancosDAO {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Object[]> readAll() {
-		
-		Query q = manager.createNativeQuery("SELECT * FROM EJ_BANCOS.BANCOS");
-		List<Object[]> authors = q.getResultList();
-		for (Object[] a : authors) {
-			System.out.println("Banco: "
-			+ a[0]
-			+ " "
-			+ a[1]
-			+ " "
-			+ a[2]
-			);
-		}
-		
-		return authors;
-	}
-	
-	
-	@SuppressWarnings("unchecked")
 	public List<Bancos> findAll() {
 		
 		Query query = manager.createQuery("FROM Bancos");

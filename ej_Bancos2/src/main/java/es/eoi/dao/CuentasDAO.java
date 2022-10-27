@@ -22,9 +22,9 @@ public class CuentasDAO {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Cuentas> cuentasCliente(int id) {
+	public List<Cuentas> cuentasCliente(String dni) {
 		Query query = manager.createQuery("FROM Cuentas c WHERE c.cliente.id = :parameter");
-		query.setParameter("parameter",id);
+		query.setParameter("parameter",dni);
 		return query.getResultList();
 	}
 	

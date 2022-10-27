@@ -1,6 +1,5 @@
 package es.eoi.app;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import es.eoi.dao.BancosDAO;
@@ -12,7 +11,6 @@ import es.eoi.entity.Cuentas;
 
 public class MyApp {
 
-	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws Exception {
 		
 		ClientesDAO clientedao = new ClientesDAO();
@@ -65,13 +63,6 @@ public class MyApp {
 		Bancos banco5 = new Bancos();
 		banco5.setNombre("BBVA");
 		banco5.setCiudad("Orihuela");
-		
-
-		
-//		bancodao.create(banco5);
-//		clientedao.create(cliente2);
-//		cuentadao.create(cuenta1);	
-		
 
 		Cuentas cuenta1 = new Cuentas();
 		cuenta1.setCliente(cliente1);
@@ -98,121 +89,121 @@ public class MyApp {
 		cuenta5.setBanco(banco3);
 		cuenta5.setSaldo(1350.50);
 
-//		/////////////////PARTE CLIENTES/////////////////////
-//		
-//		//INSERTAR CLIENTES:
-//		
-//		clientedao.create(cliente1);
-//		clientedao.create(cliente2);
-//		clientedao.create(cliente3);
-//		clientedao.create(cliente4);
-//		clientedao.create(cliente5);
-//		//VISUZALIAR CLIENTES:
-//		
-//		System.out.println(clientedao.read(cliente2.getDni()));
-//		
-//		//MOSTRAR TODOS LOS CLIENTES
-//		
-//		System.out.println(clientedao.readAll());
-//		
-//		//MODIFICAR CLIENTES:
-//		
-//		Clientes modCliente = clientedao.read("1112");
-//		modCliente.setNombre("Mod");
-//		
-//		clientedao.update(modCliente);
-//		
-//		//ELIMINAR CLIENTES:
-//		
-////		clientedao.delete("1122");
-////		clientedao.delete("1112");
-////		clientedao.delete("1111");
-////		clientedao.delete("2222");
-////		clientedao.delete("2211");
-//		
-//		
-//		/////////////////PARTE BANCOS/////////////////////
-//		
-//		
-//		//INSERTAR BANCOS:
-//		
-//		bancodao.create(banco1);
-//		bancodao.create(banco2);
-//		bancodao.create(banco3);
-//		bancodao.create(banco4);
-//		bancodao.create(banco5);
-//		
-//		//VISUALIZAR BANCO:
-//		
-//		System.out.println(bancodao.read(banco2.getId()));
-//		
-//		//VISUALIZAR TODOS LOS BANCOS:
-//		
-//		System.out.println(bancodao.readAll());
-//		
-//		//MODIFICAR BANCO:
-//		
-//		Bancos modBanco = bancodao.read(banco1.getId());
-//		modBanco.setNombre("mod");
-//		
-//		bancodao.update(modBanco);
-//
+		/////////////////PARTE CLIENTES/////////////////////
+		
+		//INSERTAR CLIENTES:
+		
+		clientedao.create(cliente1);
+		clientedao.create(cliente2);
+		clientedao.create(cliente3);
+		clientedao.create(cliente4);
+		clientedao.create(cliente5);
+		//VISUZALIAR CLIENTES:
+		
+		System.out.println(clientedao.read(cliente2.getDni()));
+		
+		//MOSTRAR TODOS LOS CLIENTES
+		
+		System.out.println(clientedao.findAll());
+		
+		//MODIFICAR CLIENTES:
+		
+		Clientes modCliente = clientedao.read("1112");
+		modCliente.setNombre("Mod");
+		
+		clientedao.update(modCliente);
+		
+		//ELIMINAR CLIENTES:
+		
+//		clientedao.delete("1122");
+//		clientedao.delete("1112");
+//		clientedao.delete("1111");
+//		clientedao.delete("2222");
+//		clientedao.delete("2211");
+		
+		
+		/////////////////PARTE BANCOS/////////////////////
+		
+		
+		//INSERTAR BANCOS:
+		
+		bancodao.create(banco1);
+		bancodao.create(banco2);
+		bancodao.create(banco3);
+		bancodao.create(banco4);
+		bancodao.create(banco5);
+		
+		//VISUALIZAR BANCO:
+		
+		System.out.println(bancodao.read(banco2.getId()));
+		
+		//VISUALIZAR TODOS LOS BANCOS:
+		
+		System.out.println(bancodao.findAll());
+		
+		//MODIFICAR BANCO:
+		
+		Bancos modBanco = bancodao.read(banco1.getId());
+		modBanco.setNombre("mod");
+		
+		bancodao.update(modBanco);
+
 //		modBanco = bancodao.read(banco1.getId());
 //		modBanco.setNombre("caja rural");
 //		
 //		bancodao.update(modBanco);
-//		
-//		//ELIMINAR BANCO:
-//		
-////		bancodao.delete(banco1.getId());
-////		bancodao.delete(banco2.getId());
-////		bancodao.delete(banco3.getId());
-////		bancodao.delete(banco4.getId());
-////		bancodao.delete(banco5.getId());
-//		
-//		
-//		/////////////////PARTE CUENTAS/////////////////////
-//		
-//		//INSERTAR CUENTAS:
-//		
-//		cuentadao.create(cuenta1);
-//		cuentadao.create(cuenta2);
-//		cuentadao.create(cuenta3);
-//		cuentadao.create(cuenta4);
-//		cuentadao.create(cuenta5);
-//		
-//		//VER CUENTA:
-//		
-//		System.out.println(cuentadao.read(cuenta1.getId()));
-//		
-//		//VER TODAS LAS CUENTAS:
-//		
-//		System.out.println(cuentadao.findAll());
-//		
-//		//MODIFICAR CUENTAS:
-//		Cuentas modCuenta = cuentadao.read(cuenta1.getId());
-//		modCuenta.setCliente(cliente3);
-//		cuentadao.update(modCuenta);
-//		
-//		//ELIMINAR CUENTAS:
-//		
-////		cuentadao.delete(cuenta1.getId());
-////		cuentadao.delete(cuenta2.getId());
-////		cuentadao.delete(cuenta3.getId());
-////		cuentadao.delete(cuenta4.getId());
-////		cuentadao.delete(cuenta5.getId());
+		
+		//ELIMINAR BANCO:
+		
+//		bancodao.delete(banco1.getId());
+//		bancodao.delete(banco2.getId());
+//		bancodao.delete(banco3.getId());
+//		bancodao.delete(banco4.getId());
+//		bancodao.delete(banco5.getId());
+		
+		
+		/////////////////PARTE CUENTAS/////////////////////
+		
+		//INSERTAR CUENTAS:
+		
+		cuentadao.create(cuenta1);
+		cuentadao.create(cuenta2);
+		cuentadao.create(cuenta3);
+		cuentadao.create(cuenta4);
+		cuentadao.create(cuenta5);
+		
+		//VER CUENTA:
+		
+		System.out.println(cuentadao.read(cuenta1.getId()));
+		
+		//VER TODAS LAS CUENTAS:
+		
+		System.out.println(cuentadao.findAll());
+		
+		//MODIFICAR CUENTAS:
+		Cuentas modCuenta = cuentadao.read(cuenta1.getId());
+		modCuenta.setCliente(cliente3);
+		cuentadao.update(modCuenta);
+		
+		//ELIMINAR CUENTAS:
+		
+//		cuentadao.delete(cuenta1.getId());
+//		cuentadao.delete(cuenta2.getId());
+//		cuentadao.delete(cuenta3.getId());
+//		cuentadao.delete(cuenta4.getId());
+//		cuentadao.delete(cuenta5.getId());
 
 		
 		//VER CUENTAS DE UN BANCO:
 		
-//		List<Cuentas> cuentasbanco1 = cuentadao.cuentasBanco(1);
-//		System.out.println(cuentasbanco1);
-//		System.out.println(cuentasbanco1.get(0).getBanco().getNombre());
-//		
-//		//VER CUENTAS DE UN USUARIO:
-//		List<Cuentas> cuentascliente1 = cuentadao.cuentasCliente(1);
-//		System.out.println(cuentascliente1);
-//		System.out.println(cuentasbanco1.get(0).getCliente().getNombre());
+		List<Cuentas> cuentasbanco1 = cuentadao.cuentasBanco(banco1.getId());
+		System.out.println(cuentasbanco1);
+		System.out.println(cuentasbanco1.get(0).getBanco().getNombre());
+		
+		//VER CUENTAS DE UN USUARIO:
+		List<Cuentas> cuentascliente1 = cuentadao.cuentasCliente(cliente3.getDni());
+		System.out.println(cuentascliente1);
+		System.out.println(cuentasbanco1.get(0).getCliente().getNombre());
 		
 		//CLIENTES Y SUS CUENTAS:
 		System.out.println(cuentadao.clientesYcuentas());
@@ -220,24 +211,24 @@ public class MyApp {
 		
 		//BORRAR TODO:
 		
-//		cuentadao.delete(cuenta1.getId());
-//		cuentadao.delete(cuenta2.getId());
-//		cuentadao.delete(cuenta3.getId());
-//		cuentadao.delete(cuenta4.getId());
-//		cuentadao.delete(cuenta5.getId());
-//		
-//		bancodao.delete(banco1.getId());
-//		bancodao.delete(banco2.getId());
-//		bancodao.delete(banco3.getId());
-//		bancodao.delete(banco4.getId());
-//		bancodao.delete(banco5.getId());
-//		
-//		clientedao.delete("1122");
-//		clientedao.delete("1112");
-//		clientedao.delete("1111");
-//		clientedao.delete("2222");
-//		clientedao.delete("2211");
-//		
+		cuentadao.delete(cuenta1.getId());
+		cuentadao.delete(cuenta2.getId());
+		cuentadao.delete(cuenta3.getId());
+		cuentadao.delete(cuenta4.getId());
+		cuentadao.delete(cuenta5.getId());
+		
+		bancodao.delete(banco1.getId());
+		bancodao.delete(banco2.getId());
+		bancodao.delete(banco3.getId());
+		bancodao.delete(banco4.getId());
+		bancodao.delete(banco5.getId());
+		
+		clientedao.delete(cliente1.getDni());
+		clientedao.delete(cliente2.getDni());
+		clientedao.delete(cliente3.getDni());
+		clientedao.delete(cliente4.getDni());
+		clientedao.delete(cliente5.getDni());
+		
 		
 
 		
