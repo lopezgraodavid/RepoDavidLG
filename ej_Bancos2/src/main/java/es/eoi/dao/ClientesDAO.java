@@ -7,7 +7,6 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import es.eoi.entity.Clientes;
-import es.eoi.entity.Cuentas;
 
 
 public class ClientesDAO {

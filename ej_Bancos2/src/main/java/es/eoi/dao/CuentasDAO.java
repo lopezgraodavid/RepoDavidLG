@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import es.eoi.entity.Bancos;
 import es.eoi.entity.Cuentas;
 
 public class CuentasDAO {
