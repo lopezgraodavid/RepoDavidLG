@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.es.eoi.marketplace.dto.PedidoDto;
+import edu.es.eoi.marketplace.service.PedidoArticuloService;
 import edu.es.eoi.marketplace.service.PedidoService;
 
 @RestController
@@ -21,6 +22,9 @@ public class PedidoController {
 	
 	@Autowired
 	PedidoService pedService;
+	
+	@Autowired
+	PedidoArticuloService pedArtService;
 	
 //	GET marketplace /pedidos/{id}
 //	Devolverá el pedido solicitado
@@ -77,8 +81,9 @@ public class PedidoController {
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<PedidoDto> createPedido(@RequestParam String nombre,@RequestParam Integer iduser) {
 		if (nombre != null && iduser != null) {
-			PedidoDto dto = pedService.createPedido(nombre,iduser);
-			return new ResponseEntity<PedidoDto>(dto,HttpStatus.ACCEPTED);
+			PedidoDto dto1 = pedService.createPedido(nombre,iduser);
+			//PedidoArticuloDto dto2 = pedArtService.createPedidoArticulo(idproducto, cantidad, dto1.getId());
+			return new ResponseEntity<PedidoDto>(dto1,HttpStatus.ACCEPTED);
 		} else {
 			return new ResponseEntity<PedidoDto>(HttpStatus.NOT_ACCEPTABLE);
 		}
